@@ -39,5 +39,18 @@ public class FirstArray {
         for (int i=0;i< arr.length;i++) {
             arr[i].display();
         }
+
+        //Passing arrays to methods
+        int sumArr[] = {12,13,14,15,16};
+        System.out.println("Sum of all the elements is: " + sum(sumArr));
+
+    }
+
+    public static int sum(int arr[]) {
+        int sum = 0;
+        for(int i=0;i<arr.length;i++) {
+            sum += arr[i];
+        }
+        return sum;
     }
 }
