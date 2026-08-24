@@ -1,5 +1,7 @@
 package basics;
 
+import java.util.Arrays;
+
 public class FirstArray {
 
     public static void main (String[] args) {
@@ -38,12 +40,27 @@ public class FirstArray {
                 new Student(32, "Hemanth")};
         for (int i=0;i< arr.length;i++) {
             arr[i].display();
+            System.out.println(arr[i]); //this will print hashcode value if we do not override toString in Student class
         }
 
         //Passing arrays to methods
         int sumArr[] = {12,13,14,15,16};
         System.out.println("Sum of all the elements is: " + sum(sumArr));
+        //returning elements from the array
+        System.out.println("Elements in the array are: " + returnArr(sumArr));
+        //[I@6e8cf4c6 -- printing hashcode when doing like above
+        //For printing array elements, we need to use toString method like below.
+        System.out.println("Elements in the array are: " + Arrays.toString(returnArr(sumArr)));
 
+    }
+
+    public static int[] returnArr(int sumArr[]) {
+        /*int returnA[] = new int[5];
+        for(int i=0;i<sumArr.length;i++) {
+            returnA[i] = sumArr[i];
+        }
+        return returnA;*/
+        return sumArr;
     }
 
     public static int sum(int arr[]) {
