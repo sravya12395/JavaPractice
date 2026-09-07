@@ -9,6 +9,7 @@ public class Student {
         return age;
     }
     public void setAge(int age) {
+        validateAge(age);
         this.age = age;
     }
 
@@ -24,6 +25,17 @@ public class Student {
     }
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    private void validateAge(int age) {
+        if (age <0)
+            throw new IllegalArgumentException("Age cannot be negative");
+    }
+
+    public void display() {
+        System.out.println("Name of the Student: " + getName());
+        System.out.println("Age of the Student: " + getAge());
+        System.out.println("Gender of the Student: " + getGender());
     }
 
 }
