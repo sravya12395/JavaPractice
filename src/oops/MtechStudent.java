@@ -24,7 +24,7 @@ public class MtechStudent extends Student {
         st.setAge(4);
 
         st.setGender("Female");
-        st.display();
+        st.display(); //Reusing parent class method
         MtechStudent mt = new MtechStudent();
         mt.ageValidation(st.getAge());
         System.out.println("Number of Subjects: " + mt.num_of_sub);
