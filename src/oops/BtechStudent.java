@@ -8,7 +8,7 @@ public class BtechStudent extends Student {
 
     static {
         num_of_sub = 10;
-        cgpa = 10.5f;
+        cgpa = 9.5f;
         salary_offered = 500000;
     }
 
@@ -25,14 +25,28 @@ public class BtechStudent extends Student {
         }
     }
 
+    //Overriding display method from super class
+    public void display() {
+        System.out.println("Displaying from Sub class by overriding method");
+        System.out.println("Name of the Student: " + getName());
+        System.out.println("Age of the Student: " + getAge());
+        System.out.println("Gender of the Student: " + getGender());
+    }
+
     public static void main (String[] args) {
-        Student st = new Student();
+        /*Student st = new Student();
         st.setName("Hemanth");
         st.setAge(32);
-        st.setGender("Male");
-        System.out.println("Name of the student: " + st.getName());
+        st.setGender("Male");*/
+        Student bs = new BtechStudent(); //can also use parent class reference
+        bs.setName("Hemanth");
+        bs.setAge(32);
+        bs.setGender("Male");
+        bs.display();
+        /*System.out.println("Name of the student: " + st.getName());
         System.out.println("Age of the student: " + st.getAge());
         System.out.println("Gender of the student: " + st.getGender());
+        */
         System.out.println("CGPA of the student: " + BtechStudent.cgpa);
         System.out.println("Salary offered: " + salary(cgpa, salary_offered));
     }
